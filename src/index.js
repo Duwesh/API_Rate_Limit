@@ -16,7 +16,7 @@ app.get("/", function async(req, res) {
   if (count < 10 && count >= 1) {
     count = count + 1;
     return res.send({
-      message: `you are making  valued requests, request remaining for a minutes is ${
+      message: `you have limited request, request remaining for a minutes is ${
         10 - count + 1
       }`,
     });
@@ -27,14 +27,14 @@ app.get("/", function async(req, res) {
       timer = ctimer;
     }
     return res.send({
-      message: "You sent too many requests. Please wait a while then try again",
+      message: "You have sent too many requests. Please wait a while then try again",
     });
   } else {
     let ctimer = new Date();
     timer = ctimer;
     count = 1;
     return res.send({
-      message: `you are making  valued requests, request remaining for a minutes is ${
+      message: `you are have limited request, request remaining for a minutes is ${
         10 - count + 1
       }`,
     });
